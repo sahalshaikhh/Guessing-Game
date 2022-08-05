@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="https://cdn.dribbble.com/users/361038/screenshots/8717831/untitled-3.jpg"
+        type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Bahianita&display=swap" rel="stylesheet">
+    <title>Guess The Number:</title>
+</head>
+
+<body>
+    <h1 id="Name"></h1>
+    <small class="wellcomeNote">(Wellcome to the game)</small>
+    <hr />
+    <center>
+        <div class="container">
+
+            <input type="number" name="Text" id="InputFirst" placeholder="Guess the Number Please e.g:0 - 100">
+            <br>
+            <p id="Hint">Hint : The Number is Between 0-100</p>
+            <br />
+            <p id="Win">
+            </p>
+
+            <button id="BtnSubmit" onclick="AnswerClick()" type="submit">Check Guess:</button>
+        </div>
+    </center>
+
+    <footer>
+
+        <address>This Web Game is Created by : <b>Sahal</b></address>
+        All &copy;opy Writes Reserved for 2022-2024.
+    </footer>
+    <script>
+
+        var askName = prompt("Enter your Name Please:", "sahal");
+        var Name_Node = document.getElementById("Name")
+        Name_Node.innerHTML = "Hello" + " " + askName;
+
+        var Win_Node = document.getElementById("Win");
+        var InputFirst_Node = document.getElementById("InputFirst")
+        var High_to_Low_Node = document.getElementById("High_to_Low")
+        var MagicNumber = 12;
+
+        function AnswerClick() {
+            if (InputFirst_Node.value == MagicNumber) {
+                Win_Node.innerText = "You Win Congratulations" + " " + askName;
+            } else if (InputFirst_Node.value < MagicNumber) {
+
+                Win_Node.innerText = "Higher Number Please:"
+            } else if (InputFirst_Node.value > MagicNumber) {
+                Win_Node.innerText = "Lower Number Please:"
+            }
+
+        }
+    </script>
+</body>
+
+</html>
